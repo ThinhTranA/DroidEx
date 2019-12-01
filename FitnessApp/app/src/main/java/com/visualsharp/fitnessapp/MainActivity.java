@@ -10,6 +10,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     TextView titlepage;
+    TextView subtitlepage, btnexercise;
     ImageView imgpage;
 
     @Override
@@ -23,8 +24,13 @@ public class MainActivity extends AppCompatActivity {
         Typeface Vidaloka = Typeface.createFromAsset(getAssets(), "fonts/Vidaloka.ttf");
 
         titlepage = (TextView) findViewById(R.id.titlepage);
+        subtitlepage = (TextView) findViewById(R.id.subtitlepage);
+        btnexercise = (TextView) findViewById(R.id.btnexercise);
 
         //customize font
         titlepage.setTypeface(Vidaloka);
+        subtitlepage.setTypeface(MLight);
+        btnexercise.setTypeface(MMedium);
+
     }
 }
