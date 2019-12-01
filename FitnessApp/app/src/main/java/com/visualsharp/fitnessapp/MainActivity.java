@@ -2,6 +2,7 @@ package com.visualsharp.fitnessapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -12,8 +13,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView titlepage;
-    TextView subtitlepage, btnexercise;
+    TextView subtitlepage, btnexercise, titlepage;
     ImageView imgpage;
     Animation animimgpage, bttone, bttwo, btthree, ltr;
     View bgprogress, bgprogresstop;
@@ -56,6 +56,15 @@ public class MainActivity extends AppCompatActivity {
         btnexercise.startAnimation(btthree);
         bgprogress.startAnimation(bttwo);
         bgprogresstop.startAnimation(ltr);
+
+        btnexercise.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent a = new Intent(MainActivity.this, WorkoutAct.class);
+                a.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(a);
+            }
+        });
 
     }
 }
