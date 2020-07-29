@@ -1,6 +1,7 @@
 package com.visualsharp.androidme.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
 
@@ -13,5 +14,14 @@ public class AndroidMeActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_android_me);
+
+        BodyPartFragment headFragment = new BodyPartFragment();
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        fragmentManager.beginTransaction()
+                .add(R.id.head_container, headFragment)
+                .commit();
+
     }
 }

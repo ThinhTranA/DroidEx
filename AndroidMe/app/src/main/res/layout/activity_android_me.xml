@@ -14,10 +14,12 @@
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:paddingTop="16dp">
-        <androidx.appcompat.widget.AppCompatTextView
+
+        <FrameLayout
+            android:id="@+id/head_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_vertical|center_horizontal" android:text="This is my stuff"/>
+            android:layout_height="180dp"
+            android:scaleType="centerInside"/>
 
     </LinearLayout>
 </ScrollView>
