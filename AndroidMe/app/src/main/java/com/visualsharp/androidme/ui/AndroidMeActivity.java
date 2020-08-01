@@ -22,17 +22,22 @@ public class AndroidMeActivity extends AppCompatActivity {
         BodyPartFragment headFragment = new BodyPartFragment();
 
         headFragment.setImageIds(AndroidImageAssets.getHeads());
-        headFragment.setListIndex(1);
+        // Get the correct index to access in the array of head images from the intent
+        // Set the default value to 0
+        int headIndex = getIntent().getIntExtra("headIndex", 0);
+        headFragment.setListIndex(headIndex);
 
         BodyPartFragment bodyFragment = new BodyPartFragment();
 
         bodyFragment.setImageIds(AndroidImageAssets.getBodies());
-        bodyFragment.setListIndex(1);
+        int bodyIndex = getIntent().getIntExtra("bodyIndex", 0);
+        bodyFragment.setListIndex(bodyIndex);
 
         BodyPartFragment legFragment = new BodyPartFragment();
 
         legFragment.setImageIds(AndroidImageAssets.getLegs());
-        legFragment.setListIndex(1);
+        int legIndex = getIntent().getIntExtra("legIndex", 0);
+        legFragment.setListIndex(legIndex);
 
 
         FragmentManager fragmentManager = getSupportFragmentManager();
